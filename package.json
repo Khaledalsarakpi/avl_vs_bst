@@ -13,29 +13,33 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "pinia": "^2.0.11",
     "@quasar/extras": "^1.16.4",
+    "d3": "^7.9.0",
+    "pinia": "^2.0.11",
+    "postcss-rtlcss": "^5.7.1",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@quasar/app-vite": "^1.9.0",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^12.20.21",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "vite-plugin-checker": "^0.7.2",
-    "vue-tsc": "2.0.29",
-    "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.0.0",
-    "eslint-config-prettier": "^8.1.0",
-    "prettier": "^2.5.1",
-    "@types/node": "^12.20.21",
-    "@quasar/app-vite": "^1.9.0",
     "autoprefixer": "^10.4.2",
-    "typescript": "~5.5.4"
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^9.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "~5.5.4",
+    "vite-plugin-checker": "^0.7.2",
+    "vue-tsc": "2.0.29"
   },
   "engines": {
     "node": "^20 || ^18 || ^16",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
