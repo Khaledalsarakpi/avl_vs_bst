@@ -111,7 +111,7 @@ interface TreeNode {
   children?: TreeNode[]
 }
 
-// ===== BST Class =====
+//   BST Class
 class BSTNode {
   val: number
   left: BSTNode | null = null
@@ -182,7 +182,6 @@ class BST {
     }
   }
 
-  // 👇 تعريف جديد
   async _visualSearch(node: BSTNode | null, val: number, callback: (path: number[], status: string) => void): Promise<boolean> {
     let path: number[] = []
 
@@ -236,7 +235,7 @@ class BST {
   }
 }
 
-// ===== AVL Class =====
+//   AVL Class
 class AVLNode {
   val: number
   height: number = 1
@@ -287,23 +286,23 @@ class AVL {
     if (!node) return new AVLNode(val)
     if (val < node.val) node.left = this._insert(node.left, val)
     else if (val > node.val) node.right = this._insert(node.right, val)
-    else return node // لا تقبل التكرارات
+    else return node
 
     node.height = 1 + Math.max(this.height(node.left), this.height(node.right))
     const balance = this.balanceFactor(node)
 
-    // Left Left
+    // LL
     if (balance > 1 && val < (node.left?.val ?? 0))
       return this.rightRotate(node)
-    // Right Right
+    // RR
     if (balance < -1 && val > (node.right?.val ?? 0))
       return this.leftRotate(node)
-    // Left Right
+    // LR
     if (balance > 1 && val > (node.left?.val ?? 0)) {
       node.left = this.leftRotate(node.left!)
       return this.rightRotate(node)
     }
-    // Right Left
+    // RL
     if (balance < -1 && val < (node.right?.val ?? 0)) {
       node.right = this.rightRotate(node.right!)
       return this.leftRotate(node)
@@ -372,7 +371,6 @@ class AVL {
     }
   }
 
-  // 👇 تعريف جديد
   async _visualSearch(node: AVLNode | null, val: number, callback: (path: number[], status: string) => void): Promise<boolean> {
     let path: number[] = []
 
@@ -426,7 +424,6 @@ class AVL {
   }
 }
 
-// ==== MAIN LOGIC ====
 const bst = new BST()
 const avl = new AVL()
 
@@ -443,7 +440,6 @@ const avlSearchResult = ref<boolean | null>(null)
 const bstSearchTime = ref(0)
 const avlSearchTime = ref(0)
 
-// متغيرات جديدة لعرض الرسائل التفاعلية
 const bstStatus = ref<string | null>(null)
 const avlStatus = ref<string | null>(null)
 
@@ -626,7 +622,6 @@ async function searchNode() {
     avlStatus.value = status
   })
 
-  // قياس الزمن
   const startBST = performance.now()
   bstSearchResult.value = bst.search(searchValue.value)
   const endBST = performance.now()
