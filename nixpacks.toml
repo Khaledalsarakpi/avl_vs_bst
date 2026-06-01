@@ -2,10 +2,10 @@
 nixPkgs = ["nodejs_22", "nodePackages.pnpm"]
 
 [phases.install]
-cmds = ["npm install"]
+cmds = ["npm install", "npm install -g serve"]
 
 [phases.build]
 cmds = ["npm run build"]
 
 [start]
-cmd = "npx serve dist/spa -s -l 80"
+cmd = "serve dist/spa -s -l 80"
