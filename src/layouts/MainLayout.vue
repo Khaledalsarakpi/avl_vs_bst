@@ -2,12 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
-        <q-toolbar-title>
-          AVL VS BST Project
-        </q-toolbar-title>
+        <q-toolbar-title> AVL VS BST Project Test </q-toolbar-title>
       </q-toolbar>
     </q-header>
-
 
     <q-page-container>
       <router-view />
@@ -16,10 +13,7 @@
 </template>
 
 <script setup lang="ts">
-
 defineOptions({
-  name: 'MainLayout'
+  name: 'MainLayout',
 });
-
-
 </script>
